@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta charset="utf-8" />
+		<title>设置</title>
+		<link rel="stylesheet" type="text/css" href="css/setup.css"/>
+		<link rel="stylesheet" type="text/css" href="css/svg/font.css"/>
+		<script>
+		window.onload = function(){
+			document.documentElement.style.fontSize=innerWidth/16+"px";
+			// html font-size=50px;
+			onresize=function(){
+				document.documentElement.style.fontSize=innerWidth/16+"px";
+		    }
+			footer.onclick=function(){
+				localStorage.clear()
+			}
+		}
+		</script>
+
+	</head>
+	<body>
+		<!--头部-->
+		<header>
+			<a href="myTaobao.html" class="icon-arrow-left2"></a>
+			<p>设置</p>
+			<img src="img/setup2.png"/>
+		</header>
+		<!--中部内容 -->
+		<content>
+			<a href="personalData.html">
+			<li>
+				<img src="img/setup3.png"/>
+				<p>个人资料</p>
+				<img src="img/setup11.png"/>
+				<i></i>
+			</li>
+			</a>
+			<li>
+				<img src="img/setup4.png"/>
+				<p>账户与安全</p>
+				<img src="img/setup11.png"/>
+				<i></i>
+			</li>
+			
+			<li>
+				<img src="img/setup5.png"/>
+				<p>新消息通知</p>
+				<img src="img/setup11.png"/>
+				<i></i>
+			</li>
+			
+			<li>
+				<img src="img/setup6.png"/>
+				<p>隐私</p>
+				<img src="img/setup11.png"/>
+				<i></i>
+			</li>
+			
+			<li>
+				<img src="img/setup7.png"/>
+				<p>通用</p>
+				<img src="img/setup11.png"/>
+				<i></i>
+			</li>
+			
+			<li>
+				<img src="img/setup8.png"/>
+				<p>国家/地区</p>
+				<img src="img/setup11.png"/>
+			
+			</li>
+			
+		</content>
+		
+		<content2>
+			<li>
+				<img src="img/setup9.png"/>
+				<p>我的小蜜</p>
+				<img src="img/setup11.png"/>
+				<i></i>
+			</li>
+			
+			<li>
+				<img src="img/setup10.png"/>
+				<p>关于手机淘宝</p>
+				<img src="img/setup11.png"/>
+			</li>
+		</content2>
+		<!--尾部	-->
+		<a href="register.html" class="footer" id="footer">
+			退出当前账户
+		</a>
+	</body>
+</html>

@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/svg/font.css" />
+		<script src="js/jquery-1.8.3.min.js"></script>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+				border: 0;
+				list-style: none;
+				outline: none;
+			}
+			a{
+				text-decoration: none;
+			}
+			body {
+				background: #eee;
+			}
+			
+			#top {
+				height: 2.2rem;
+				border-bottom: 1px solid #eee;
+				background: #FDFDFD;
+			}
+			
+			.jian{
+				font-size: 1rem;
+				color: #757A80;
+				margin-top: 0.6rem;
+				margin-left: 0.4rem;
+				float: left;
+			}
+			
+			.jian img {
+				width: 100%;
+				height: 100%;
+			}
+			
+			#top  input {
+				width: 11rem;
+				height: 1.5rem;
+				background: #fbfbfb;
+				margin: 0.3rem 1rem;
+				float: left;
+				border-bottom: 0.1rem solid red;
+				border-radius: 0.2rem;
+				text-indent: 0.3rem;
+			}
+			
+			#top  .Imga {
+				width: 1.3ren;
+				height: 1.3rem;
+				float: left;
+				margin-top: 0.4rem;
+			}
+			
+			#top  .Imga img {
+				width: 100%;
+				height: 100%;
+			}
+			
+			#top  .Imgb {
+				width: 1ren;
+				height: 1.5rem;
+				float: left;
+				margin-top: 0.4rem;
+				margin-left: 1.2rem;
+			}
+			
+			#top  .Imgb img {
+				width: 100%;
+				height: 100%;
+			}
+			
+			#nav {
+				height: 2rem;
+				border-bottom: 1px solid #eee;
+				background: #FDFDFD;
+				display: -webkit-box;
+				-webkit-box-orient: horizontal;
+			}
+			
+			#nav a {
+				-webkit-box-flex: 1;
+				display: block;
+				text-align: center;
+				line-height: 2rem;
+				font-size: 0.8rem;
+				color: #757A80;
+			}
+			
+			#nav a i {
+				font-size: 0.7rem;
+				color: #757A80;
+			}
+			
+			.con {
+				height: 5.6rem;
+				padding: 0.3rem 1.5rem;
+				margin-bottom: 0.2rem;
+				background: #fff;
+				position: relative;
+			}
+			
+			.con img {
+				width: 5rem;
+				height: 5rem;
+				float: left;
+				margin-right: 0.6rem;
+			}
+			
+			.con p {
+				font-size: 0.6rem;
+				color: #333333;
+				line-height: 1rem;
+			}
+			
+			.con p:nth-child(3) {
+				font-size: 0.7rem;
+				color: #B3B3BA;
+				line-height: 1.2rem;
+			}
+			
+			.con p:nth-child(4) {
+				font-size: 0.6rem;
+				color: #AD2243;
+				line-height: 1.2rem;
+			}
+			
+			.con .gwc {
+				width: 2rem;
+				height: 2rem;
+				position: absolute;
+				right: 1.8rem;
+				bottom: 0.7rem;
+			}
+			
+			.con .gwc img {
+				width: 100%;
+				height: 100%;
+			}
+		</style>
+
+	</head>
+
+	<body>
+		<div id="top">
+			<a href="homepage.html" class="jian icon-arrow-left2"></a>
+			<input type="text" id="iptb" />
+			<a class="Imga"><img src="img/list_img2.jpg" /></a>
+			<a class="Imgb"><img src="img/list_img3.jpg" /></a>
+		</div>
+		<div id="nav">
+			<a id="zhpx">综合排序</a>
+			<a id="xl">销量</a>
+			<a id="jg">价格</a>
+			<a id="sx">筛选<i class="icon-hour-glass"></i></a>
+		</div>
+		<content id='con'></content>
+	</body>
+	
+	<script type="text/javascript">
+		window.onload = function() {
+			document.documentElement.style.fontSize = innerWidth / 19 + "px";
+			onresize = function() {
+				document.documentElement.style.fontSize = innerWidth / 19 + "px";
+			}
+			
+			var textVal = localStorage.listarr;
+			var cont = document.getElementById('con')
+			$('#iptb').val(textVal);
+			$('#iptb').click(function() {
+					window.location.href = 'sousuo.html'
+				})
+			//综合
+			show()
+			zhpx.onclick = function() {
+				cont.innerHTML = '';
+				show()
+			}
+
+			function show() {
+				$.ajax({
+					type: "post",
+					url: "http://192.168.1.100/supermarket/data/getcommditybykw.php",
+					async: true,
+					data: {
+						'kw': $('#iptb').val()
+					},
+					dataType: 'jsonp',
+					jsonp: 'callback',
+					jsonpCallback: "success_jsonpCallback",
+					success: function(data) {
+//						debugger;//断点
+						for(var i = 0; i < data.length; i++) {
+							var oDiv = document.createElement('div');
+							oDiv.className = 'con'
+							oDiv.innerHTML = '<a href="detail.html?id=' + data[i].id + '"><img src="http://192.168.1.100/supermarket/img/' + data[i].img + '" /></a><p>' + data[i].name + '</P><p>' + data[i].count + '人已购买</p><p>￥' + data[i].price + '</p><div id="'+data[i].id+'" class="gwc"><img src="img/img/gwc.png"></div>';
+							cont.appendChild(oDiv);
+						}
+
+					},
+					error: function(d) {
+
+					}
+				});
+			}
+			//销量
+			var order = true;
+			xl.onclick = function() {
+				$.ajax({
+					type: "post",
+					url: "http://192.168.1.100/supermarket/data/getcommditybykw.php",
+					async: true,
+					data: {
+						'kw': $('#iptb').val()
+					},
+					dataType: 'jsonp',
+					jsonp: 'callback',
+					jsonpCallback: "success_jsonpCallback",
+					success: function(data) {
+						cont.innerHTML = '';
+						data.sort(function(a, b) {
+							if(order) {
+								return a.count - b.count;
+							} else {
+								return b.count - a.count;
+							}
+						});
+						order = !order;
+						for(var i = 0; i < data.length; i++) {
+							var oDiv = document.createElement('div');
+							oDiv.className = 'con'
+							oDiv.innerHTML = '<a href="detail.html?id=' + data[i].id + '"><img src="http://192.168.1.100/supermarket/img/' + data[i].img + '" /></a><p>' + data[i].name + '</P><p>' + data[i].count + '人已购买</p><p>￥' + data[i].price + '</p><div id="'+data[i].id+'" class="gwc"><img src="img/img/gwc.png"></div>';
+							cont.appendChild(oDiv);
+						}
+//						console.log(order)
+
+					},
+					error: function(d) {}
+				});
+			};
+			//价格
+			var order2 = true;
+			jg.onclick = function() {
+				$.ajax({
+					type: "post",
+					url: "http://192.168.1.100/supermarket/data/getcommditybykw.php",
+					async: true,
+					data: {
+						'kw': $('#iptb').val()
+					},
+					dataType: 'jsonp',
+					jsonp: 'callback',
+					jsonpCallback: "success_jsonpCallback",
+					success: function(data) {
+						cont.innerHTML = '';
+						data.sort(function(a, b) {
+							if(order2) {
+								return a.jg - b.jg;
+							} else {
+								return b.jg - a.jg;
+							}
+
+						});
+						order2 = !order2;
+						for(var i = 0; i < data.length; i++) {
+							var oDiv = document.createElement('div');
+							oDiv.className = 'con'
+							oDiv.innerHTML = '<a href="detail.html?id=' + data[i].id + '"><img src="http://192.168.1.100/supermarket/img/' + data[i].img + '" /></a><p>' + data[i].name + '</P><p>' + data[i].count + '人已购买</p><p>￥' + data[i].price + '</p><div id="'+data[i].id+'" class="gwc"><img src="img/img/gwc.png"></div>';
+							cont.appendChild(oDiv);
+						}
+					},
+					error: function(d) {
+
+					}
+				});
+			}
+			
+			
+			//购物车
+			$("#con").delegate(".gwc","click",function(){
+				console.log(this.id)
+//				var id=$(this).attr('id')
+				$.ajax({
+					type: "post",
+					url: "http://192.168.1.100/supermarket/data/my_commodity_car.php",
+					async: true,
+					data: {'user_phone': localStorage.user_phone,'commodity_id':this.id,'count': 1},
+					dataType: 'jsonp',
+					jsonp: 'callback',
+					jsonpCallback: "success_jsonpCallback",
+					success: function(data) {
+						debugger;
+						window.location.href = 'myCar.html';
+					},
+					error: function(d) {}
+				});	
+			})
+
+		}
+	</script>
+
+</html>

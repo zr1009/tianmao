@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta charset="UTF-8">
+		<title>搜索</title>
+		<link rel="stylesheet" type="text/css" href="css/svg/font.css" />
+		<link rel="stylesheet" type="text/css" href="css/sousuo.css" />
+		<script src="js/jquery-1.8.3.min.js"></script>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+				list-style: none;
+			}
+			a{
+				text-decoration: none;
+			}
+			
+			#top {
+				height: 2.2rem;
+				border-bottom: 1px solid #EEEEEE;
+				background: #FDFDFD;
+			}
+			
+			.jian {
+				font-size: 1rem;
+				color: #757A80;
+				margin-top: 0.6rem;
+				margin-left: 0.4rem;
+				float: left;
+			}
+			
+			
+			#ipta {
+				width: 11rem;
+				height: 1.5rem;
+				background: #DCDCDC;
+				margin: 0.3rem 1rem;
+				float: left;
+				border-bottom: 0.1rem solid red;
+				border-radius: 0.2rem;
+				text-indent: 0.3rem;
+				border: none;
+				outline: none;
+			}
+			
+			#search {
+				padding: 0.2rem 0.5rem;
+				background: red;
+				color: #FFFFFF;
+				font-size: 0.8rem;
+				border: 1px solid red;
+				border-radius: 0.2rem;
+				float: left;
+				margin-top: 0.4rem;
+			}
+			
+			.lishi,
+			.con {
+				width: 94%;
+				min-height: 3rem;
+				margin: 0.5rem auto;
+				overflow: hidden;
+			}
+			
+			.lishi h3,
+			.con h3 {
+				font-size: 0.8rem;
+				font-weight: normal;
+				line-height: 1.5rem;
+				color: #444;
+			}
+			
+			.lishi h3 i,
+			.con h3 i {
+				float: right;
+				line-height: 1.5rem;
+				margin-right: 0.5rem;
+				color: #000;
+			}
+			
+			.lishi p,
+			.con p {
+				padding: 0.2rem 0.6rem;
+				border-radius: 0.2rem;
+				float: left;
+				background: #DCDCDC;
+				color: #000;
+				font-size: 0.7rem;
+				margin: 0.3rem 0.2rem;
+			}
+			
+			.lishi .history,
+			.con .history {
+				overflow: hidden;
+			}
+			
+			.lishi .history p:last-child,
+			.con .history p:last-child {
+				display: none;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="top">
+			<a href="homepage.html" class="jian icon-arrow-left2"></a>
+			<input type="text" id="ipta" />
+			<div id="search">搜索</div>
+		</div>
+		<div class="lishi">
+			<h3>历史搜索<i class="icon-bin"></i></h3>
+			<div class="history" id="history"></div>
+
+		</div>
+		<div class="con">
+			<h3>搜索发现<i class="icon-eye"></i></h3>
+			<div class="discover" id="discover">
+				<p>干脆面</p>
+				<p>三只松鼠</p>
+				<p>牙刷</p>
+				<p>洗衣液</p>
+				<p>洗洁精</p>
+				<p>抽纸</p>
+				<p>垃圾袋</p>
+				<p>良品铺子</p>
+				<p>纸巾</p>
+				<p>辣条</p>
+				<p>卷纸</p>
+				<p>方便面</p>
+				<p>薯片</p>
+				<p>洗衣粉</p>
+				<p>盐</p>
+				<p>火腿肠</p>
+			</div>
+
+		</div>
+		
+		<script type="text/javascript">
+			window.onload = function() { 
+				document.documentElement.style.fontSize=innerWidth/19+"px";
+				onresize = function(){
+					document.documentElement.style.fontSize = innerWidth/19 +"px";
+				}
+				
+				var history = document.getElementById('history')
+				var discover = document.getElementById('discover')
+				var aHist = history.children;
+				var aDisc = discover.children;
+				
+				$('#search').click(function() {
+					history.innerHTML = '';
+					if(ipta.value !== '') {
+						localStorage.arr += ipta.value + '-';
+						localStorage.listarr = ipta.value;
+					}
+					arrs = localStorage.arr.split('-');
+					for(var i = 0; i < arrs.length; i++) {
+						var ap = document.createElement('p');
+						ap.innerHTML = arrs[i];
+						history.appendChild(ap)
+					}
+					ipta.value = ''
+					window.location.href = 'listr.html'
+				});
+				
+				$(function() {
+					var history = document.getElementById('history')
+					var ipta = document.getElementById('ipta');
+					history.innerHTML = '';
+					if(ipta.value !== '') {
+						localStorage.arr += ipta.value + '-';
+						
+
+					}
+					arrs = localStorage.arr.split('-');
+					for(var i = 0; i < arrs.length; i++) {
+						var ap = document.createElement('p');
+						ap.innerHTML = arrs[i];
+						history.appendChild(ap)
+					}
+					ipta.value = ''
+					for(var i = 0; i < aHist.length; i++) {
+						aHist[i].onclick = function() {
+							localStorage.listarr = this.innerHTML;
+							window.location.href = 'listr.html'
+						}
+					}
+					for(var i = 0; i < aDisc.length; i++) {
+						aDisc[i].onclick = function() {
+							localStorage.listarr = this.innerHTML;
+							window.location.href = 'listr.html'
+						}
+					}
+				});
+				
+			}
+		</script>
+	</body>
+</html>

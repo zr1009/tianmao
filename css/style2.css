@@ -1,0 +1,359 @@
+html,
+body,
+div,
+span,
+p,
+h1,
+h2,
+h3,
+b,
+i,
+a,
+em,
+input,
+form,
+img,
+ul,
+li,
+dl,
+dt {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: none;
+  vertical-align: middle;
+  font-style: normal;
+  box-sizing: border-box;
+}
+ul,
+li,
+ol {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+img {
+  display: inline-block;
+}
+.cuxiao {
+  overflow: hidden;
+  border-bottom: 0.45rem solid #EFEFEF;
+}
+.cuxiao .top {
+  height: 1.5rem;
+  border-left: 2px solid red;
+}
+.cuxiao .top h3 {
+  font-size: 0.7rem;
+  line-height: 1.5rem;
+  text-indent: 0.2rem;
+  float: left;
+}
+.cuxiao .top span {
+  font-size: 0.6rem;
+  line-height: 1.5rem;
+  float: right;
+  margin-right: 0.3rem;
+}
+.cuxiao .top span img {
+  margin-left: 0.3rem;
+  width: 0.3rem;
+  height: 0.6rem;
+}
+.cuxiao .cximg {
+  width: 33%;
+  height: 4.5rem;
+  float: left;
+}
+.cuxiao .cximg img {
+  width: 100%;
+  height: 100%;
+}
+.hot {
+  overflow: hidden;
+  border-bottom: 0.45rem solid #EFEFEF;
+}
+.hot .top {
+  height: 1.5rem;
+  border-left: 2px solid red;
+  border-bottom: 1px solid #EAEAEA;
+}
+.hot .top h3 {
+  font-size: 0.7rem;
+  line-height: 1.5rem;
+  text-indent: 0.2rem;
+  float: left;
+}
+.hot .top span {
+  font-size: 0.6rem;
+  line-height: 1.5rem;
+  float: right;
+  margin-right: 0.3rem;
+}
+.hot .top span img {
+  margin-left: 0.3rem;
+  width: 0.3rem;
+  height: 0.6rem;
+}
+.hot .hotList {
+  width: 50%;
+  height: 4rem;
+  float: left;
+}
+.hot .hotList .text {
+  width: 50%;
+  height: 100%;
+  float: left;
+}
+.hot .hotList .text h3 {
+  font-size: 0.7rem;
+  color: #000000;
+  font-weight: 600;
+  text-align: center;
+  line-height: 1.5rem;
+}
+.hot .hotList .text p {
+  font-size: 0.6rem;
+  text-align: center;
+  color: #696A69;
+}
+.hot .hotList .hotimg {
+  width: 3.5rem;
+  height: 3.5rem;
+  float: left;
+  margin: 0.2rem;
+}
+.hot .hotList .hotimg img {
+  width: 100%;
+  height: 100%;
+}
+.hot .hotList:last-child {
+  border-left: 1px solid #EAEAEA;
+}
+.hot .hotList_btn {
+  width: 25%;
+  height: 5.25rem;
+  border-top: 1px solid #EAEAEA;
+  border-right: 1px solid #EAEAEA;
+  float: left;
+}
+.hot .hotList_btn h3 {
+  font-size: 0.7rem;
+  color: #222222;
+  font-weight: 600;
+  text-align: center;
+  line-height: 1.2rem;
+}
+.hot .hotList_btn p {
+  font-size: 0.6rem;
+  text-align: center;
+  color: #696A69;
+}
+.hot .hotList_btn .hotimg {
+  width: 3rem;
+  height: 3rem;
+  margin: 0.2rem 0.3rem;
+}
+.hot .hotList_btn .hotimg img {
+  width: 100%;
+  height: 100%;
+}
+.huilive {
+  overflow: hidden;
+  border-bottom: 0.45rem solid #EFEFEF;
+}
+.huilive .top {
+  height: 1.5rem;
+  border-left: 2px solid red;
+}
+.huilive .top h3 {
+  font-size: 0.7rem;
+  line-height: 1.3rem;
+  text-indent: 0.2rem;
+  float: left;
+}
+.huilive .top h3 i {
+  font-size: 0.6rem;
+  line-height: 1.3rem;
+  font-style: normal;
+}
+.huilive .top span {
+  font-size: 0.6rem;
+  line-height: 1.5rem;
+  float: right;
+  margin-right: 0.3rem;
+}
+.huilive .top span img {
+  margin-left: 0.3rem;
+  width: 0.3rem;
+  height: 0.6rem;
+}
+.huilive .live {
+  height: 6rem;
+  overflow: hidden;
+}
+.huilive .live .liveWidtn {
+  width: 36rem;
+  height: 6rem;
+}
+.huilive .live .liveWidtn .liveimg {
+  width: 12rem;
+  height: 6rem;
+  float: left;
+}
+.huilive .live .liveWidtn .liveimg img {
+  width: 100%;
+  height: 100%;
+}
+.recommend {
+  overflow: hidden;
+}
+.recommend .top {
+  height: 1.5rem;
+  border-left: 2px solid red;
+  border-bottom: 1px solid #D8D9D8;
+}
+.recommend .top h3 {
+  font-size: 0.7rem;
+  line-height: 1.3rem;
+  text-indent: 0.2rem;
+  float: left;
+}
+.recommend nav {
+  height: 2.5rem;
+  border-bottom: 1px solid #D8D9D8;
+  overflow: hidden;
+  position:relative;
+}
+.recommend nav ul {
+  width: 27rem;
+  height: 2.5rem;
+
+  background: transparent;
+  position:absolute;
+}
+.recommend nav ul li {
+  width: 3rem;
+  height: 2.5rem;
+  float: left;
+  background: transparent;
+  border-right: 1px solid #D8D9D8;
+  position: relative;overflow: hidden;
+}
+.recommend nav ul li p{width:100%;height:100%;background:red;position:absolute;top:0;z-index: -4;left:-100%;transition: .3s;}
+.recommend nav ul li i {
+  display: block;
+  margin: 0.3rem auto;
+  text-align: center;
+  font-size: 0.8rem;
+  color: #A2A2A2;
+}
+.recommend nav ul li span {
+  display: block;
+  text-align: center;
+  font-size: 0.6rem;
+  color: #A2A2A2;
+}
+.recommend nav ul .slidered p{
+  left:0;
+}
+.recommend nav ul .slidered i {
+  color: #fff;
+}
+.recommend nav ul .slidered span {
+  color: #fff;
+}
+.recommend .recoBox {
+  width: 50%;
+  height: 12rem;
+  float: left;
+  border-bottom: 4px solid #D8D9D8;
+  position: relative;
+}
+.recommend .recoBox:nth-child(2n+1) {
+  border-right: 4px solid #D8D9D8;
+}
+/*.recommend .recoBox {
+  width: 100%;
+  height: 8rem;
+}*/
+.recommend .recoBox img {
+  width: 100%;
+  height: 8rem;
+}
+.recommend .recoBox p:nth-child(2) {
+  font-size: 0.4rem;
+  margin: 0.2rem 0.3rem;
+  line-height: 0.8rem;
+  color: #444;
+}
+.recommend .recoBox p:nth-child(3) {
+  font-size: 0.4rem;
+  margin: 0.2rem 0.3rem;
+  line-height: 0.8rem;
+  color: #cccccc;
+}
+.recommend .recoBox p:nth-child(4) {
+  font-size: 0.5rem;
+  margin: 0.2rem 0.3rem;
+  line-height: 0.8rem;
+  color: #DB0C09;
+}
+.recommend .recoBox .gwc {
+  width: 1.5rem;
+  height: 1.5rem;
+  position: absolute;
+  right: 0.6rem;
+  bottom: 0.4rem;
+}
+.recommend .recoBox .gwc img {
+  width: 100%;
+  height: 100%;
+}
+#abox{
+	height: 12rem;
+}
+#jz{
+	width:100%;
+	height:1rem;
+	text-align: center;
+	line-height:1rem;
+	color:#494949;
+	font-size:0.5rem;
+	margin:0.3rem auto;
+	background:#C2C2C2;
+	margin-bottom: 1.95rem;
+}
+footer {
+  width: 100%;
+  height: 1.95rem;
+  display: flex;
+  position: fixed;
+  bottom: 0;
+  border-top: 0.025rem solid #dcdcdc;
+  background: #fff;
+}
+footer a {
+  flex: 1;
+  color: #656567;
+  display: block;
+}
+footer a span {
+  display: block;
+  width: 100%;
+  font-size: 0.75rem;
+  margin-top: 0.4rem;
+  text-align: center;
+}
+footer a p {
+  display: block;
+  width: 100%;
+  margin-top: 0.2rem;
+  font-size: 0.325rem;
+  text-align: center;
+}
+footer .active {
+  color: #f84409;
+}
+/*# sourceMappingURL=style2.css.map */

@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<title></title>
+		<link rel="stylesheet" href="css/svg/font.css" />
+		<script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+				list-style: none;
+				text-decoration: none;
+			}
+			
+			.header {
+				height: 2.15rem;
+				width: 100%;
+				background: url(img/header.jpg) no-repeat;
+				background-size: cover;
+				position: fixed;
+				top: 0;
+				z-index: 4;
+				z-index: 7;
+			}
+			
+			.header>div {
+				width: 50%;
+				height: 100%;
+			}
+			
+			.header .left {
+				float: left;
+			}
+			
+			.header .left a {
+				display: block;
+				margin-left: 0.3rem;
+				color: #fff;
+				font-size: 0.95rem;
+				margin-top: 0.6rem;
+				float: left;
+			}
+			
+			.header .left span {
+				display: block;
+				margin-left: 0.3rem;
+				color: #fff;
+				font-size: 0.95rem;
+				margin-top: 0.6rem;
+				float: left;
+			}
+			
+			.header .right {
+				float: right;
+			}
+			
+			.header .right span:nth-child(1) {
+				display: block;
+				margin-left: 4rem;
+				color: #fff;
+				font-size: 0.95rem;
+				margin-top: 0.6rem;
+				float: left;
+			}
+			
+			.header .right span:nth-child(2) {
+				margin-left: 1rem;
+				display: block;
+				float: left;
+			}
+			
+			.header .right span:nth-child(2) i {
+				display: block;
+				background: #fff;
+				width: 0.2rem;
+				height: 0.2rem;
+				float: left;
+				border-radius: 50%;
+				margin-right: 2px;
+				margin-top: 0.9rem;
+			}
+			
+			.center {
+				width: 100%;
+				height: auto;
+				overflow: hidden;
+				position: relative;
+				margin-top: 2.15rem;
+			}
+			
+			.center #center {
+				width: 100%;
+				height: 1.8rem;
+				display: flex;
+				border-top: 1px solid #ccc;
+				background: #fff;
+				position: fixed;
+				top: 0;
+				z-index: 2;
+				top: 2.15rem;
+			}
+			
+			.center #center a {
+				display: block;
+				flex: 1;
+				color: #999999;
+				width: 100%;
+				font-size: 1rem;
+				text-align: center;
+				text-decoration: none;
+				line-height: 1.8rem;
+				font-size: 0.6rem;
+			}
+			
+			.center #center>.ss {
+				color: #f5551f;
+				border-bottom: 2px solid #f5551f;
+			}
+			
+			#ul {
+				width: 100%;
+				height: auto;
+				margin-top: 2.125rem;
+				margin-bottom: 4.075rem;
+			}
+			
+			#ul li {
+				height: auto;
+				background: #fbfbfb;
+				border-bottom: 0.05rem solid #dcdcdc;
+				position: relative;
+			}
+			
+			.con {
+				height: auto;
+				width: 100%;
+				overflow: hidden;
+			}
+			
+			.con img {
+				width: 3rem;
+				height: 3rem;
+				float: left;
+				margin-top: 0.225rem;
+				margin-left: 0.65rem;
+			}
+			
+			.right {
+				width: 11rem;
+				float: left;
+				margin-left: 0.5rem;
+			}
+			
+			.right a:nth-child(1) {
+				width: 11rem;
+				height: 1.5rem;
+				line-height: 0.75rem;
+				font-size: 0.5rem;
+				color: #353736;
+				word-break: break-word;
+				display: block;
+				margin-top: 0.225rem;
+			}
+			
+			.right a:nth-child(2) {
+				height: 0.5rem;
+				line-height: 0.75rem;
+				font-size: 0.5rem;
+				color: #f56002;
+				word-break: break-word;
+				display: block;
+				margin-top: 0.225rem;
+				float: left;
+			}
+			
+			.right a:nth-child(3) {
+				height: 0.5rem;
+				line-height: 0.75rem;
+				font-size: 0.5rem;
+				color: #353736;
+				word-break: break-word;
+				display: block;
+				margin-top: 0.225rem;
+				margin-right: 0;
+				float: right;
+			}
+			
+			.bottom {
+				height: 1.5rem;
+				width: 100%;
+			}
+			
+			.bottom span {
+				display: block;
+				float: right;
+				font-size: 0.6rem;
+				width: 3rem;
+				height: 1rem;
+				margin-right: 0.5rem;
+				margin-top: 0.1rem;
+				color: #666;
+				border: 1px solid #666;
+				border-radius: 0.2rem;
+				text-align: center;
+				line-height: 1rem;
+			}
+		</style>
+	</head>
+
+	<body>
+
+		<div class="header">
+			<div class="left">
+				<a href="myTaobao.html">
+					<</a>
+						<span>我的订单</span>
+			</div>
+			<div class="right">
+				<span class="icon-search"></span>
+				<span>
+					<i></i>
+					<i></i>
+					<i></i>
+				</span>
+			</div>
+		</div>
+
+		<div class="center">
+			<div id="center">
+				<a class="ss" href="javascript:;">全部</a>
+				<a href="javascript:;">待付款</a>
+				<a href="javascript:;">待发货</a>
+				<a href="javascript:;">待收货</a>
+				<a href="javascript:;">待评价</a>
+			</div>
+			<ul id="ul"></ul>
+		</div>
+	</body>
+	<script>
+		document.documentElement.style.fontSize = document.documentElement.clientWidth / 320 * 20 + 'px';
+		window.onresize = function() {
+			document.documentElement.style.fontSize = document.documentElement.clientWidth / 320 * 20 + 'px';
+		};
+		var arr_commodity_id = []
+		var arr_count = []
+		var arr_name = []
+		var arr_addr = []
+		var arr_phone = []
+		var arr_time = []
+		var ul = document.getElementById("ul")
+
+		$.ajax({
+			type: "post",
+			url: "http://192.168.1.100/supermarket/data/get_commodity_order.php",
+			async: true,
+			data: {
+				'user_phone': localStorage.user_phone
+			},
+			dataType: 'jsonp',
+			jsonp: 'callback',
+			jsonpCallback: "success_jsonpCallback",
+			success: function(data) {
+//				debugger;
+//				console.log(data)
+				for(var i = 0; i < data.length; i++) {
+					arr_commodity_id.unshift(data[i].commodity_id)
+					arr_count.unshift(data[i].count)
+					arr_name.unshift(data[i].user_name)
+					arr_addr.unshift(data[i].user_addr)
+					arr_phone.unshift(data[i].consignee_phone)
+					arr_time.unshift(data[i].order_time)
+				}
+				chakan()
+			},
+			error: function(data) {
+
+			}
+		});
+		window.onload = function() {
+			var allDetial = document.getElementsByClassName('detail')
+			var allHide = document.getElementsByClassName('hide')
+			for(var i = 0; i < allDetial.length; i++) {
+				allDetial[i].index = i
+				allDetial[i].onclick = function() {
+					localStorage.u_name = arr_name[this.index]
+					localStorage.u_phone = arr_phone[this.index]
+					localStorage.u_addr = arr_addr[this.index]
+					localStorage.u_count = arr_count[this.index]
+					localStorage.u_time = arr_time[this.index]
+					window.location.href = "xiangqing.html?id=" + allHide[this.index].innerHTML
+				}
+			}
+			var oDelete = document.getElementsByClassName('delete')
+			var oList = document.getElementsByClassName('list')
+			var pinjia = document.getElementsByClassName('pinjia')
+//						alert(pinjia.length)
+				
+			//删除
+			for(var j = 0; j < oDelete.length; j++) {
+				oDelete[j].index = j;
+				pinjia[j].index = j
+				oDelete[j].onclick = function() {
+					var _index = this.index
+					$.ajax({
+						type: "post",
+						url: "http://192.168.1.100/supermarket/data/my_commodity_delete_order.php",
+						async: true,
+						data: {
+							'commodity_id': arr_commodity_id[_index],
+							'order_time': arr_time[_index],
+							'user_phone': localStorage.user_phone
+						},
+						dataType: 'jsonp',
+						jsonp: 'callback',
+						jsonpCallback: "success_jsonpCallback",
+						success: function(data) {
+//							console.log(data)
+							window.location.reload();
+						},
+						error: function(data) {
+
+						}
+					});
+				}
+				pinjia[j].onclick = function() {
+					var _index = this.index
+//					alert(arr_commodity_id[_index])
+//					console.log(1)
+					window.location.href = 'pinglun.html?id=' + arr_commodity_id[_index]
+
+				}
+			}
+		}
+
+
+		var i = 0
+		function chakan() {
+			$.ajax({
+				type: "post",
+				url: "http://192.168.1.100/supermarket/data/get_commodity_info.php",
+				async: true,
+				data: {
+					'id': arr_commodity_id[i]
+				},
+				dataType: 'jsonp',
+				jsonp: 'callback',
+				jsonpCallback: "success_jsonpCallback",
+				success: function(data) {
+					//	console.log(data);
+					var oLi = document.createElement('li')
+					oLi.className = 'list'
+					oLi.innerHTML = '<div class="con"><a href="detail.html?id=' + data.id + '"><img src="http://192.168.1.100/supermarket/img/' + data.img + '" /></a><div class="right"><a>' + data.name + '</a><a class="danjia">' + data.price + '</a><a class="xgh">' + arr_count[i] + '</a></div></div><div class="bottom"><span class="pinjia">追加评价</span><span class="delete">删除订单</span><span class="detail";">订单详情</span></div><div style="display:none;" class="hide">' + data.id + '</div>';
+					ul.appendChild(oLi)
+					if(i == arr_commodity_id.length) {
+						return
+					} else {
+						i++
+						chakan()
+					}
+				},
+				error: function(data) {
+
+				}
+			});
+		}
+		
+		
+		//	var ul = document.getElementById('ul')
+		//	var allUL = ul.children[0]
+		//		
+		//	var oCenter=document.getElementById("center")
+		//	var allA=oCenter.children
+		//	var ulIndex = 0;
+		//	var oldX = 0;
+		//	var newX = 0;
+		//	
+		//
+		//		ul.addEventListener('touchstart', function(e) {
+		//			oldX = e.touches[0].clientX;
+		//			
+		//			
+		//		}, false);
+		//
+		//		ul.addEventListener('touchmove', function(e) {
+		//			newX = e.touches[0].clientX - oldX
+		//			
+		//
+		//		}, false);
+		//		ul.addEventListener('touchend', function(e) {
+		//			if (newX < -20 ) {
+		//				
+		//				if (ulIndex == 4) {
+		//					ulIndex = 4
+		//				}else{
+		//					ulIndex++;
+		//				}
+		//				ul.style.transition='0.5s'
+		//				ul.style.left = allUL.offsetWidth * (-ulIndex) + 'px';
+		//				
+		//				for(var i=0;i<allA.length;i++){
+		//					allA[i].className=''
+		//				}
+		//				allA[ulIndex].className='ss'
+		//			}else if(newX >20){
+		//				if (ulIndex == 0) {
+		//					ulIndex = 0
+		//				}else{
+		//					ulIndex--;
+		//				}
+		//				
+		//				ul.style.left = allUL.offsetWidth * (-ulIndex) + 'px'
+		//				ul.style.transition='0.5s' 
+		//				for(var i=0;i<allA.length;i++){
+		//					allA[i].className=''
+		//				}
+		//				allA[ulIndex].className='ss'
+		//			}else {
+		//				ul.style.left = allUL.offsetWidth * (-ulIndex) + 'px'
+		//				allA[ulIndex].className='ss'
+		//			}
+		//
+		//		}, false);
+		//		for(var i=0;i<allA.length;i++){
+		//		allA[i].index = i;
+		//		allA[i].onclick = function(){
+		//			for(var i=0;i<allA.length;i++){
+		//				ul.style.left =0
+		//				allA[i].className = '';
+		//				ulIndex=this.index
+		//			}	
+		//			
+		//			ul.style.left = allUL.offsetWidth * (-ulIndex) + 'px'
+		//			ul.style.transition='0s' 
+		//			allA[ulIndex].className = 'ss';
+		//		};
+		//	}
+	</script>
+
+</html>

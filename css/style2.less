@@ -1,0 +1,315 @@
+@import reset;
+.cuxiao {
+    overflow: hidden;
+    border-bottom: 0.45rem solid #EFEFEF;
+    .top {
+        height: 1.5rem;
+        border-left: 2px solid red;
+        h3 {
+            font-size: 0.7rem;
+            line-height: 1.5rem;
+            text-indent: 0.2rem;
+            float: left;
+        }
+        span {
+            font-size: 0.6rem;
+            line-height: 1.5rem;
+            float: right;
+            margin-right: 0.3rem;
+            img {
+                margin-left: 0.3rem;
+                width: 0.3rem;
+                height: 0.6rem;
+            }
+        }
+    }
+    .cximg {
+        width: 33%;
+        height: 4.5rem;
+        float: left;
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+}
+.hot {
+    overflow: hidden;
+    border-bottom: 0.45rem solid #EFEFEF;
+    .top {
+        height: 1.5rem;
+        border-left: 2px solid red;
+        border-bottom: 1px solid #EAEAEA;
+        h3 {
+            font-size: 0.7rem;
+            line-height: 1.5rem;
+            text-indent: 0.2rem;
+            float: left;
+        }
+        span {
+            font-size: 0.6rem;
+            line-height: 1.5rem;
+            float: right;
+            margin-right: 0.3rem;
+            img {
+                margin-left: 0.3rem;
+                width: 0.3rem;
+                height: 0.6rem;
+            }
+        }
+    }
+    .hotList {
+        width: 50%;
+        height: 4rem;
+        float: left;
+        .text {
+            width: 50%;
+            height: 100%;
+            float: left;
+            h3 {
+                font-size: 0.7rem;
+                color: #000000;
+                font-weight: 600;
+                text-align: center;
+                line-height: 1.5rem;
+            }
+            p {
+                font-size: 0.6rem;
+                text-align: center;
+                color: #696A69;
+            }
+        }
+        .hotimg {
+            width: 3.5rem;
+            height: 3.5rem;
+            float: left;
+            margin: 0.2rem;
+            img {
+                width: 100%;
+                height: 100%;
+            }
+        }
+        &:last-child {
+            border-left: 1px solid #EAEAEA;
+        }
+    }
+    .hotList_btn {
+        width: 25%;
+        height: 5.25rem;
+        border-top: 1px solid #EAEAEA;
+        border-right: 1px solid #EAEAEA;
+        float: left;
+        h3 {
+            font-size: 0.7rem;
+            color: #222222;
+            font-weight: 600;
+            text-align: center;
+            line-height: 1.2rem;
+        }
+        p {
+            font-size: 0.6rem;
+            text-align: center;
+            color: #696A69;
+        }
+        .hotimg {
+            width: 3rem;
+            height: 3rem;
+            margin: 0.2rem 0.3rem;
+            img {
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+}
+.huilive {
+    overflow: hidden;
+    border-bottom: 0.45rem solid #EFEFEF;
+    .top {
+        height: 1.5rem;
+        border-left: 2px solid red;
+        h3 {
+            font-size: 0.7rem;
+            line-height: 1.3rem;
+            text-indent: 0.2rem;
+            float: left;
+            i {
+                font-size: 0.6rem;
+                line-height: 1.3rem;
+                font-style: normal;
+            }
+        }
+        span {
+            font-size: 0.6rem;
+            line-height: 1.5rem;
+            float: right;
+            margin-right: 0.3rem;
+            img {
+                margin-left: 0.3rem;
+                width: 0.3rem;
+                height: 0.6rem;
+            }
+        }
+    }
+    .live {
+        height: 6rem;
+        overflow: scroll;
+        .liveWidtn {
+            width: 36rem;
+            height: 6rem;
+            .liveimg {
+                width: 12rem;
+                height: 6rem;
+                float: left;
+                img {
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+        }
+    }
+}
+.recommend {
+    overflow: hidden;
+    margin-bottom: 2rem;
+    .top {
+        height: 1.5rem;
+        border-left: 2px solid red;
+        border-bottom: 1px solid #D8D9D8;
+        h3 {
+            font-size: 0.7rem;
+            line-height: 1.3rem;
+            text-indent: 0.2rem;
+            float: left;
+        }
+    }
+    nav {
+        height: 2.5rem;
+        border-bottom: 1px solid #D8D9D8;
+        overflow: auto;
+        ul {
+            width: 27rem;
+            height: 2.5rem;
+            position: relative;
+            background: transparent;
+            
+            li {
+                width: 3rem;
+                height: 2.5rem;
+                float: left;
+                background: transparent;
+                border-right: 1px solid #D8D9D8;
+                position: relative;
+                i {
+                    display: block;
+                    margin: 0.3rem auto;
+                    text-align: center;
+                    font-size: 0.8rem;
+                    color: #A2A2A2;
+                }
+                span {
+                    display: block;
+                    text-align: center;
+                    font-size: 0.6rem;
+                    color: #A2A2A2;
+                }
+                
+            }
+            .slidered {
+                background: red;
+                i{
+                    color: #fff;
+                }
+                span{
+                     color: #fff;
+                }
+            }
+            
+        }
+    }
+    .recoBox {
+        width: 50%;
+        height: 12rem;
+        float: left;
+        border-bottom: 4px solid #D8D9D8;
+        position: relative;
+        &:nth-child(2n+1){
+            border-right: 4px solid #D8D9D8;
+            
+        }
+        
+        .recoimg {
+            width: 100%;
+            height: 8rem;
+            img {
+                width: 100%;
+                height: 100%;
+            }
+        }
+        p {
+            font-size: 0.4rem;
+            margin: 0.2rem 0.3rem;
+            line-height: 0.8rem;
+            color: #444;
+        }
+        h5 {
+            font-size: 0.4rem;
+            margin: 0.2rem 0.3rem;
+            line-height: 0.8rem;
+            color: #cccccc;
+        }
+        h6 {
+            font-size: 0.5rem;
+            margin: 0.2rem 0.3rem;
+            line-height: 0.8rem;
+            color: #DB0C09;
+        }
+        .gwc {
+            width: 1.5rem;
+            height: 1.5rem;
+            position: absolute;
+            right: 0.6rem;
+            bottom: 0.4rem;
+            img {
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+
+
+}
+footer {
+    width: 100%;
+    height: 1.95rem;
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    border-top: 0.025rem solid #dcdcdc;
+    background: #fff;
+    a {
+        flex: 1;
+        color: #656567;
+        display: block;
+        span {
+            display: block;
+            width: 100%;
+            font-size: 0.75rem;
+            margin-top: 0.4rem;
+            text-align: center;
+            
+        }
+       p {
+            display: block;
+            width: 100%;
+            margin-top: 0.2rem;
+            font-size: 0.325rem;
+            text-align: center;
+        }
+        
+    }
+    .active {
+            color: #f84409;
+        }
+}
+

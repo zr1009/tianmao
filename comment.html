@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<title></title>
+		<script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+		<style>
+			* {
+				margin: 0 auto;
+				padding: 0;
+			}
+			
+			.wyc_header {
+				width: 16rem;
+				height: 2.1rem;
+				background: #f9f9f9;
+			}
+			
+			#wyc_ding {
+				float: left;
+				width: 0.45rem;
+				height: 0.85rem;
+				margin-top: 0.65rem;
+				margin-left: 0.25rem;
+			}
+			
+			.wyc_fb {
+				float: left;
+				width: 3.15rem;
+				height: 0.75rem;
+				line-height: 0.75rem;
+				font-size: 0.75rem;
+				margin-left: 0.5rem;
+				margin-top: 0.7rem;
+			}
+			
+			.pingji {
+				width: 100%;
+				height: 1.95rem;
+				border-bottom: 0.025rem solid #eee;
+				display: flex;
+				display: -webkit-flex;
+			}
+			
+			.pingji li {
+				list-style: none;
+				line-height: 1.95rem;
+				height: 1.95rem;
+				color: #a7a7a7;
+				font-size: 0.7rem;
+				float: left;
+				flex: 1;
+				padding-left: 0.9rem;
+				margin-left: 1.5rem;
+				/*background: url(img/hua.jpg) no-repeat 0 center;*/
+				background-size: 0.675rem 0.775rem;
+			}
+			
+			.pingji li.now {
+				color: #ea4e10;
+				/*background: url(img/hua1.jpg) no-repeat 0 center;*/
+				background-size: 0.675rem 0.775rem;
+			}
+			
+			.wyc_cennter {
+				width: 100%;
+				margin-top: 0.5rem;
+				height: 2.35rem;
+			}
+			
+			.wyc_cening {
+				width: 2.35rem;
+				height: 2.35rem;
+				float: left;
+			}
+			
+			.wyc_cening img {
+				width: 1.0814rem;
+				height: 1.1851rem;
+				float: left;
+				margin-left: 0.2962rem;
+			}
+			
+			.wyc_cennter span {
+				width: 10.5rem;
+				height: 2.35rem;
+				float: left;
+				-margin-left: 0.7rem;
+				outline: none
+			}
+			
+			.wyc_haoping {
+				height: 1.85rem;
+				width: 100%;
+				float: left;
+				border-top: 0.1rem solid #eee;
+				margin-top: 0.2rem;
+				border-bottom: 0.2rem solid #eee;
+			}
+			
+			#wyc_a {
+				width: 2.9rem;
+				height: 1.05rem;
+				margin-top: 0.5rem;
+				float: left;
+				margin-left: 0.7rem
+			}
+			
+			#wyc_b {
+				width: 2.5rem;
+				height: 1.05rem;
+				margin-top: 0.5rem;
+				float: left;
+				margin-left: 3.36rem;
+			}
+			
+			#wyc_c {
+				width: 2.5rem;
+				height: 1.05rem;
+				margin-top: 0.5rem;
+				float: right;
+				margin-right: 0.7rem;
+			}
+			
+			.wyc_foot {
+				width: 100%;
+				height: 1.95rem;
+				margin-top: 100%;
+				position: fixed;
+				bottom: 0;
+				z-index: 3;
+			}
+			
+			.wyc_foot input {
+				width: 3.4rem;
+				height: 1.95rem;
+				float: right;
+				text-align: center;
+				line-height: 1.95rem;
+				border: 0;
+				background: #ff4d06;
+				color: #fff;
+			}
+			
+			#censpan {
+				overflow: hidden;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="wyc_header">
+			<img src="img/g-14.jpg" id="wyc_ding">
+			<span class="wyc_fb">发表评价</span>
+			<img src="img/g-19.jpg" class="foot" style="width:2.175rem;height:1.9rem;float:right;" />
+		</div>
+
+		<div class="wyc_cennter">
+			<div class="wyc_cening"><img src="img/wc_4.jpg"></div>
+			<span id="censpan" contenteditable="true"></span>
+			<img src="img/haoping (1).jpg" style="float:left;margin-left:0.5rem;width:1.3rem;height:1.3rem;">
+		</div>
+		<img src="img/haoping (2).jpg" style="float:left;margin-top:1.75rem;width:3.6rem;height:3.6rem;margin-left:0.3rem;">
+		<ul class="pingji">
+			<li class="now">好评</li>
+			<li>中评</li>
+			<li>差评</li>
+		</ul>
+
+		<div class="wyc_foot">
+			<img src="img/haoping.jpg" style="float:left;width:4.1rem;height:1.55rem;margin-top:0.3rem;">
+			<input type="button" value="发表评价" id="fa">
+		</div>
+
+		<script type="text/javascript">
+			document.documentElement.style.fontSize = innerWidth / 16 + 'px';
+			onresize = function() {
+				document.documentElement.style.fontSize = innerWidth / 16 + 'px';
+			}
+
+			$(function() {
+				$('.pingji li').click(function() {
+						$(this).addClass('now').siblings().removeClass()
+					})
+					//小图片
+				var id = location.href.split('=')[1]
+				$.ajax({
+						type: "post",
+						url: "http://10.115.11.224/supermarket/data/get_commodity_info.php",
+						async: true,
+						data: {
+							'id': id
+						},
+						dataType: 'jsonp',
+						jsonp: 'callback',
+						jsonpCallback: "success_JsonpCallback",
+						success: function(data) {
+							$(".wyc_cening img").attr("src", 'http://10.115.11.224/supermarket/img/' + data.classify + '/' + data.img)
+						}
+					})
+					//提交评论
+				var t = null;
+				var time = null;
+				$('#fa').click(function() {
+					$.ajax({
+						type: "post",
+						url: "http://192.168.1.100/supermarket/data/evaluate.php",
+						data: {
+							'evaluate': $(".pingji li[class='now']").index() + 1,
+							'commodity_id': id,
+							'user_name': localStorage.name,
+							'evaluate_info': $('#censpan').html(),
+							'user_phone': localStorage.telNum
+						},
+						async: true,
+						dataType: "jsonp",
+						jsonp: "callback",
+						jsonpCallback: "success_JsonpCallback",
+						success: function(data) {
+								location.href = 'indent.html'
+						}
+					});
+				})
+
+				$('.wyc_fb').click(function() {
+					window.location.href = "indent.html";
+				})
+
+			})
+		</script>
+	</body>
+
+</html>

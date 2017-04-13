@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta charset="UTF-8">
+		<title>新增收获地址</title>
+		<link rel="stylesheet" href="css/addxz.css" />
+		<link rel="stylesheet" href="css/reset.css" />
+		<script	src="js/jquery-1.8.3.min.js"></script>
+		<script>
+		window.onload = function(){
+			onresize=function(){
+				document.documentElement.style.fontSize=innerWidth/16+'px';
+			}
+			document.documentElement.style.fontSize=innerWidth/16+'px';
+			
+
+			$('.baocun').click(function(){
+//				console.log(1)
+				var user_addr=$('#shr').val()+'-'+$('#lxdh').val()+'-'+$('#szdq').val()+'-'+$('#jd').val()+'-'+$('#xxdz').val()+'-'+$('#yb').val();
+				$.ajax({
+					type: "post",
+					url:  "http://192.168.1.100/supermarket/data/user_update_addr.php",
+					data:{
+						"user_addr":user_addr,
+						"user_phone":localStorage.user_phone
+					},
+					async: true,
+					dataType: 'jsonp',
+					jsonp: 'callback',
+					jsonpCallback: "success_jsonpCallback",
+					success: function(data) {						
+//							debugger
+							localStorage.user_addr = user_addr;
+							window.location.href = "address.html";						
+					},
+					error: function(d) {}
+				});
+			})
+		}
+		</script>
+	</head>
+	<body>
+		<div class="box">
+			<div class="header">
+				<a href="address.html"><img src="img/zc_img.png" alt="" /></a>
+				<div class="zi">添加新地址</div>
+				<a href="javascript:;" class="baocun">保存</a>
+			</div>
+			 <div class="content">
+			 	<a href="javascript:;">
+			 		<span>
+			 			<p>收货人</p>
+			 			<input type="text"  placeholder="请输入" id="shr"/>
+			 		</span>
+			 	</a>
+			 	<a href="javascript:;">
+			 		<span>
+			 			<p>联系电话</p>
+			 			<input type="text" id="lxdh" />
+			 		</span>
+			 	</a>
+			 	<a href="javascript:;">
+			 		<span>
+			 			<p>所在地区</p>
+			 			<input type="text" id="szdq" />
+			 		</span>
+			 		<b>></b>
+			 	</a>
+			 	<a href="javascript:;">
+			 		<span>
+			 			<p>街道</p>
+			 			<input type="text" id="jd" />
+			 		</span>
+			 		<b>></b>
+			 	</a>
+			 	<a href="javascript:;">
+			 		<span>
+			 			<p>详细地址</p>
+			 			<input type="text" id="xxdz" />
+			 		</span>
+			 		<b>></b>
+			 	</a>
+			 	<a href="javascript:;">
+			 		<span>
+			 			<p>邮编</p>
+			 			<input type="text" id="yb" />
+			 		</span>
+			 		<b>></b>
+			 	</a>
+			 </div>
+			 <div class="content2"></div>
+			 <div class="content3">
+			 	<p>设为默认地址</p>
+			 	<input type="checkbox" />
+			 </div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="initial-scale=1.0,maximum-scale=1.0, user-scalable=no" />
+		<link rel="stylesheet" type="text/css" href="css/svg/font.css" />
+		<script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+		<title></title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+				list-style: none;
+				font-family: "微软雅黑";
+				vertical-align: middle;
+			}
+			
+			body {
+				background: #f4f4f4;
+			}
+			
+			a {
+				text-decoration: none;
+			}
+			
+			#top {
+				width: 100%;
+				height: 2.125rem;
+				background: url(img/bj.png);
+				background-size: cover;
+				font-size: 0.75rem;
+				color: #fff;
+				text-align: center;
+				line-height: 2.125rem;
+				position: fixed;
+				top: 0;
+				z-index: 2;
+			}
+			
+			#top a {
+				position: absolute;
+				right: 2.9rem;
+				font-size: 0.6rem;
+				color: #fff;
+			}
+			
+			#top img {
+				position: absolute;
+				top: 0.45rem;
+				right: 0.37rem;
+				width: 1.2rem;
+				height: 1.05rem;
+				float: right;
+			}
+			
+			#commodity {
+				/*height: 17.8rem;*/
+				background: #fbfbfb;
+				border-bottom: 0.05rem solid #dcdcdc;
+				margin-top: 2.125rem;
+				margin-bottom: 4rem;
+				overflow: auto;
+			}
+			
+			.comm {
+				height: 1.925rem;
+				line-height: 1.925rem;
+				background: #fff;
+				font-size: 0.55rem;
+				color: #484848;
+			}
+			
+			.comm input {
+				width: 0.925rem;
+				height: 0.925rem;
+				margin-left: 0.65rem;
+				margin-top: 0.5rem;
+				float: left;
+			}
+			
+			.comm a:nth-child(3){
+				margin-left: 0.5rem;
+				float: left;
+			}
+			
+			.Imga {
+				width: 0.75rem;
+				height: 0.75rem;
+				float: left;
+				margin-left: 0.7rem;
+				margin-top: 0.575rem;
+			}
+			
+			.Imgb {
+				width: 0.375rem;
+				height: 0.75rem;
+				float: left;
+				margin-top: 0.55rem;
+				margin-left: 0.625rem;
+			}
+			
+			.comm span {
+				width: 2.4rem;
+				height: 0.675rem;
+				line-height: 0.675rem;
+				font-size: 0.5rem;
+				color: #353736;
+				float: right;
+				margin-top: 0.575rem;
+				text-align: center;
+			}
+			
+			.comm span:nth-child(6){
+				border-right:0.025rem solid #e3e3e3 ;
+			}
+			
+			.con {
+				height: 4.7rem;
+				background: #fff;
+				border-bottom:  0.05rem solid #dcdcdc;
+			}
+			
+			.con input {
+				width: 0.925rem;
+				height: 0.925rem;
+				margin-left: 0.65rem;
+				margin-top: 1.825rem;
+				float: left;
+			}
+			
+			.con img {
+				width: 4.1rem;
+				height: 4.1rem;
+				float: left;
+				margin-top: 0.225rem;
+				margin-left: 0.65rem;
+			}
+			
+			.right {
+				width: 8.625rem;
+				float: left;
+				margin-left: 0.5rem;
+			}
+			
+			.right a:nth-child(1) {
+				width: 8.625rem;
+				height: 1.5rem;
+				line-height: 0.75rem;
+				font-size: 0.5rem;
+				color: #353736;
+				word-break: break-word;
+				display: block;
+				margin-top: 0.225rem;
+			}
+			
+			.right a:nth-child(2) {
+				width: 8.625rem;
+				height: 1.5rem;
+				line-height: 0.75rem;
+				font-size: 0.5rem;
+				color: #c3c3c3;
+				word-break: break-word;
+				display: block;
+				margin-top: 0.225rem;
+			}
+			
+			.right a:nth-child(3) {
+				height: 0.5rem;
+				line-height: 0.75rem;
+				font-size: 0.5rem;
+				color: #f56002;
+				word-break: break-word;
+				display: block;
+				margin-top: 0.225rem;
+				float: left;
+			}
+			
+			.right s:nth-child(4) {
+				height: 0.5rem;
+				line-height: 0.75rem;
+				font-size: 0.4rem;
+				color: #c3c3c3;
+				word-break: break-word;
+				display: block;
+				margin-top: 0.225rem;
+				margin-left: 0.25rem;
+				float: left;
+			}
+			
+			.right a:nth-child(5) {
+				height: 0.5rem;
+				line-height: 0.75rem;
+				font-size: 0.5rem;
+				color: #353736;
+				word-break: break-word;
+				display: block;
+				margin-top: 0.225rem;
+				margin-right: 0;
+				float: right;
+			}
+			.right a:nth-child(5) span {
+				float: left;
+			}
+			
+			#jiesuan {
+				width: 100%;
+				height: 2.125rem;
+				display: flex;
+				position: fixed;
+				bottom: 1.975rem;
+				border-top: 0.05rem solid #dcdcdc;
+				background: #fff;
+			}
+			
+			#jiesuan input {
+				width: 0.925rem;
+				height: 0.925rem;
+				margin-left: 0.65rem;
+				margin-top: 0.6rem;
+				float: left;
+			}
+			
+			.qx {
+				height: 0.7rem;
+				line-height: 0.75rem;
+				font-size: 0.6rem;
+				color: #c3c3c3;
+				display: block;
+				margin-top: 0.7rem;
+				margin-left: 0.65rem;
+				float: left;
+			}
+			
+			.hj {
+				height: 2.125rem;
+				width: 3.25rem;
+				padding: 0 0.5rem;
+				padding-top: 0.375rem;
+				position: absolute;
+				right: 5.25rem;
+			}
+			
+			.hj a:nth-child(1) {				
+				width:1.8rem;
+				height: 0.6rem;
+				font-size: 0.6rem;
+				color: #1d1d1d;
+				display: block;
+				float: left;
+			}
+			.hj a:nth-child(2) {
+				width:0.8rem;
+				height: 0.55rem;
+				font-size: 0.55rem;
+				color: #d36d3c;
+				display: block;
+				float: left;
+			}
+			.hj p:nth-child(3) {
+				text-align: right;
+				font-size: 0.45rem;
+				color: #848484;
+				margin-top: 0.85rem;
+			}
+			
+			#js {
+				width: 4.675rem;
+				height: 2.125rem;
+				line-height: 2.125rem;
+				font-size: 0.7rem;
+				color: #fff;
+				text-align: center;
+				background: #fd5200;
+				position: absolute;
+				right: 0;
+			}
+			
+			footer {
+				width: 100%;
+				height: 1.95rem;
+				display: flex;
+				position: fixed;
+				bottom: 0;
+				border-top: 0.025rem solid #dcdcdc;
+				background: #fff;
+			}
+			
+			footer a {
+				flex: 1;
+				color: #656567;
+				display: block;
+			}
+			
+			footer a span {
+				display: block;
+				width: 100%;
+				font-size: 0.75rem;
+				margin-top: 0.4rem;
+				text-align: center;
+			}
+			
+			footer a p {
+				display: block;
+				width: 100%;
+				margin-top: 0.2rem;
+				font-size: 0.325rem;
+				text-align: center;
+			}
+			
+			footer .active {
+				color: #f84409;
+			}
+			
+			.shan {
+				width: 100%;
+				height: 3.7rem;
+				background: #fff;
+				border-bottom:  0.05rem solid #dcdcdc;
+				position: relative;
+				display: none;
+			}
+			
+			.shan input {
+				width: 0.925rem;
+				height: 0.925rem;
+				margin-left: 0.65rem;
+				margin-top: 1.5rem;
+				float: left;
+			}
+			.sc{
+				width: 4.5rem;
+				height: 3.7rem;
+				line-height: 3.7rem;
+				font-size: 0.7rem;
+				color: #fff;
+				text-align: center;
+				background: #fd5200;
+				position: absolute;
+				right: 0;
+			}
+			.jajn{
+				position: absolute;
+				right: 4.5rem;
+				width: 5.5rem;
+				height: 3.7rem;				
+			}
+			.jia,.jian,.number{
+				float: left;
+				margin-left: 1rem;
+				color: #000;
+				font-size: 1rem;
+				line-height: 3.7rem;
+				font-weight: bold;
+			}
+			.sc{
+				width: 4.5rem;
+				line-height: 3.7rem;
+				font-size: 0.7rem;
+				color: #fff;
+				text-align: center;
+				background: #fd5200;
+				position: absolute;
+				right: 0;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="top">
+			购物车(1)
+			<a>编辑</a>
+			<img src="img/top-right.png">
+		</div>
+		<div id="commodity">
+			<!--<div id="conn">
+					<div class="comm">
+						<input type="checkbox" />
+						<img src="img/a01.png" class="Imga" />
+						<a style="margin-left: 0.5rem;float: left;">男人派服装服饰店</a>
+						<img src="img/gd.png" class="Imgb" />
+						<span>编辑</span>
+						<span style="border-right:0.025rem solid #e3e3e3 ;">领劵</span>
+					</div>
+					<div class="con">
+						<input type="checkbox" />
+						<img src="img/sp.png" />
+						<div class="right">
+							<a>男装大码加绒加厚保暖内衣纯棉圆领宽松套头 韩版长袖加肥加大外套</a>
+							<a>颜色:黑色；尺码:XL 适合130斤-150斤左右</a>
+							<a>￥58</a><s>￥138</s>
+							<a>X1</a>
+						</div>
+					</div>
+				</div>-->
+			<!--<div class="shan">
+				<input type="checkbox" />
+				<div class='jajn'>
+		      		<a id="jian">-</a>
+		      		<a id="number">0</a>
+		      		<a id="jia">+</a>
+		      	</div>
+		      	<div id="sc">删除</div>
+			</div>-->
+		</div>
+		
+		<div id="jiesuan">
+			<input type="checkbox" id="qx" />
+			<a class="qx">全选</a>
+			<div class="hj">
+				<a>合计：</a>
+				<a id="heji">￥0</a>
+				<p style="">不含运费</p>
+			</div>
+			<a id="js">结算(0)</a>
+		</div>
+		<footer>
+			<a href="homepage.html">
+				<span class="icon-fangzi"></span>
+				<p class="">首页</p>
+			</a>
+			<a>
+				<span class="icon-feed"></span>
+				<p>微淘</p>
+			</a>
+			<a>
+				<span class="icon-question"></span>
+				<p>问大家</p>
+			</a>
+			<a class="active">
+				<span class="icon-cart"></span>
+				<p>购物车</p>
+			</a>
+			<a href="myTaobao.html">
+				<span class="icon-user"></span>
+				<p>我的淘宝</p>
+			</a>
+		</footer>
+
+		<script>				
+			var arrid=[];
+			var arrcount=[];
+			$(function(){		
+				$.ajax({
+					type: "post",
+					url: "http://192.168.1.100/supermarket/data/get_commodity_car.php",
+					async: true,
+					data: {	'user_phone': localStorage.user_phone},
+					dataType: 'jsonp',
+					jsonp: 'callback',
+					jsonpCallback: "success_jsonpCallback",
+					success: function(data) {
+//							debugger;
+//							console.log(data)
+						for(var i=0; i<data.length; i++){
+							arrid.unshift(data[i].commodity_id);
+							arrcount.unshift(data[i].count);
+						}
+//							console.log(arrid)
+						show();
+					},
+					error: function(d) {}
+				});	
+										
+				var i=0;
+				function show(){
+					$.ajax({
+						type: "post",
+						url: "http://192.168.1.100/supermarket/data/get_commodity_info.php",
+						async: true,
+						data: {'id':arrid[i]},
+						dataType: 'jsonp',
+						jsonp: 'callback',
+						jsonpCallback: "success_jsonpCallback",
+						success: function(data) {
+							var commodity=document.getElementById('commodity')
+							var conn=document.createElement('div')
+							conn.innerHTML=
+							'<div class="comm">'+
+								'<img src="img/a01.png" class="Imga" />'+
+								'<a>天猫超市</a>'+
+								'<span class="bj">编辑</span>'+
+								'<span>领劵</span>'+
+							'</div>'+
+							'<div class="con">'+
+								'<input type="checkbox" />'+
+								'<img src="http://192.168.1.100/supermarket/img/'+data.img+'" />'+
+								'<div class="right">'+
+									'<a>'+data.name+'</a>'+
+									'<a class="price">'+data.price+'</a>'+
+									'<a>'+
+										'<span>X</span>'+
+										'<span class="quantity">'+arrcount[i]+'</span>'+
+									'</a>'
+								'</div>'+
+							'</div>';
+							commodity.appendChild(conn);
+							
+							var shan=document.createElement('div')
+							shan.innerHTML=
+								'<div class="shan"  id="'+data.id+'">'+
+									"<div class='jajn'>"+
+							      		'<a class="jian">-</a>'+
+										'<span class="number">'+arrcount[i]+'</span>'+
+							      		'<a class="jia">+</a>'+
+							      	'</div>'+
+							      	'<div class="sc">删除</div>'+
+								'</div>';							   						
+							commodity.appendChild(shan);										
+							
+							if(i==arrid.length-1){
+								return;
+							}else{
+								i++
+								show()
+							}							
+						},
+						error: function(d) {}
+					});
+				}
+			});	
+				
+				
+			// 编辑
+			window.onload=function(){
+				var bj=document.getElementsByClassName('bj');
+				var shan=document.getElementsByClassName('shan');
+				var numb=document.getElementsByClassName('number');
+				var jia=document.getElementsByClassName('jia')
+				var jian=document.getElementsByClassName('jian')
+				var sc=document.getElementsByClassName('sc');
+				var quantity=document.getElementsByClassName('quantity')
+				var a=true;
+//					alert(bj.length)
+				for (var i=0;i<bj.length;i++) {
+					bj[i].index = i;
+					bj[i].onclick = function(){
+//							alert(1)
+//						加减
+						if (a) {
+							for (var i=0;i<bj.length;i++) {
+								shan[i].style.display = 'none'
+							}
+							shan[this.index].style.display = 'block'
+							bj[this.index].innerHTML = '完成'
+							var index = this.index;
+							var nb = numb[index].innerHTML;
+							jia[this.index].onmousedown = function(){
+								nb++
+								numb[index].innerHTML = nb;
+							}
+							jian[this.index].onmousedown = function(){
+								if (nb >= 2) {
+									nb--
+									numb[index].innerHTML = nb;
+								}
+							};
+							
+							//删除
+							sc[this.index].onclick = function(){
+								$.ajax({
+									type: "post",
+									url: "http://192.168.1.100/supermarket/data/my_commodity_delete_car.php",
+									async: true,
+									data: {'user_phone':localStorage.user_phone,'commodity_id': arrid[index]},	
+									dataType: 'jsonp',
+									jsonp: 'callback',
+									jsonpCallback: "success_jsonpCallback",
+									success: function(data) {
+										window.location.reload()
+									},
+									error: function(d) {}
+								});
+							}	
+							a=!a
+						} else{
+							shan[this.index].style.display = 'none'
+							bj[this.index].innerHTML = '编辑'
+							var index = this.index;
+							var count = numb[index].innerHTML;
+								$.ajax({
+									type: "post",
+									url: "http://192.168.1.100/supermarket/data/my_commodity_update_car.php",
+									async: true,
+									data: {
+										'user_phone': localStorage.user_phone,
+										'commodity_id': arrid[index],
+										'count': count
+									},
+									dataType: 'jsonp',
+									jsonp: 'callback',
+									jsonpCallback: "success_jsonpCallback",
+									success: function(data) {
+//											debugger;
+										quantity[index].innerHTML = count;
+										
+									},
+								error: function(d) {}
+							});
+							a = !a				
+						}
+					}
+				};
+				var arr_id=[];
+				var arr_count=[]
+				//全选	
+				var qx=document.getElementById('qx')
+				var price=document.getElementsByClassName('price')				
+				var quantity=commodity.getElementsByClassName('quantity')
+				var aIpt = commodity.getElementsByTagName('input')
+				qx.onclick = function() {
+					if(this.checked == true) {
+						var danjia = []
+						var shuliang = []
+						var numb= aIpt.length
+						var zongjia = 0
+						for (var i = 0; i < aIpt.length; i++) {
+							aIpt[i].checked = true;
+							js.innerHTML = '结算(' + numb + ')'
+							danjia.push(price[i].innerHTML)
+							shuliang.push(quantity[i].innerHTML)
+							arr_id.push(arrid[i])
+							arr_count.push(arrcount[i])
+							
+						}
+						for (var j = 0; j < danjia.length; j++) {
+							zongjia += eval(danjia[j] * shuliang[j])
+//							alert(danjia[j])
+						}
+						heji.innerHTML = zongjia.toFixed(2)
+					}else {
+						for (var i = 0; i < aIpt.length; i++) {
+							aIpt[i].checked = false;
+							var numb = 0
+							js.innerHTML = '结算(' + numb + ')'
+						}
+						zongjia = 0;
+						heji.innerHTML = zongjia;
+						arr_id=[]
+						arr_count=[]
+					}
+				};
+				
+				for (var i = 0; i < aIpt.length; i++) {
+					aIpt[i].index = i
+					var zongjia = 0
+					aIpt[i].onclick = function() {
+						var new_index=this.index
+						var n = 0;
+						
+						if (this.checked == true) {
+							var as = eval((price[this.index].innerHTML) * (quantity[this.index].innerHTML))
+							zongjia += parseFloat(as)
+							heji.innerHTML = zongjia.toFixed(2)
+//							alert(quantity[this.index].innerHTML)
+							arr_id.push(arrid[new_index])
+							arr_count.push(arrcount[new_index])
+							
+						} else {
+							var as = eval((price[this.index].innerHTML) * (quantity[this.index].innerHTML))
+							zongjia -= parseFloat(as)
+//							alert(as)
+							heji.innerHTML = zongjia.toFixed(2)
+						}
+						for (var i = 0; i < aIpt.length; i++) {
+							if (aIpt[i].checked == true) {
+								n++;
+								js.innerHTML = '结算(' + n + ')'
+							}
+						}
+						if (n == aIpt.length) {
+							qx.checked = true;
+						} else {
+							qx.checked = false;
+						}
+					};
+				}
+				
+//				结算
+				js.onclick = function() {
+					var a=localStorage.user_addr
+					var str=a.split("-");
+					var addr=str[2]+str[3]+str[4];
+					alert(addr)
+					console.log(arr_id)
+					console.log(arr_count)
+					for(var i=0;i<arr_id.length;i++){
+						
+						$.ajax({
+							type:"post",
+							url:"http://192.168.1.100/supermarket/data/my_commodity_order.php",
+							async:true,
+							data:{
+								'commodity_id': arr_id[i],
+								'user_phone': localStorage.user_phone,
+								'count': arr_count[i],
+								'user_name':str[0],
+								'user_addr':addr,
+								'consignee_phone':str[1]
+							},
+							dataType:"jsonp",
+							jsonp:"callback",
+							jsonpCallback: "success_jsonpCallback",
+							success: function(data) {
+								debugger;
+								console.log(data)
+								window.location.href = "successful.html";
+							},
+							error: function(d) {}
+						})
+					}
+						
+					
+				}
+				
+				
+				document.documentElement.style.fontSize = innerWidth / 16 + 'px';
+				onresize = function() {
+					document.documentElement.style.fontSize = innerWidth / 16 + 'px';
+				};
+			}			
+		</script>
+	</body>
+</html>

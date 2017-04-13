@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+					$.ajax({
+				type: "post",
+				url: "http://10.115.14.227/supermarket/data/register.php",
+				async: true,
+				data:{'user_phone':'119','user_pass_word':'119'},
+				dataType: 'jsonp',
+				jsonp: 'callback',
+				jsonpCallback: "success_jsonpCallback",
+				success: function(data) {
+					debugger;//断点
+				},
+				error: function(d) {
+					
+				}
+			});
+
+		</script>
+	</body>
+</html>

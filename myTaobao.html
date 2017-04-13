@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="initial-scale=1.0,maximum-scale=1.0, user-scalable=no" />
+		<link rel="stylesheet" type="text/css" href="css/svg/font.css"/>
+		<title></title>
+		<style>
+			*{
+				margin: 0;
+				padding: 0;
+				list-style: none;
+				font-family: "微软雅黑";
+				vertical-align: middle;
+			}
+			body{
+				background: #f4f4f4;
+			}
+			#top{
+				width: 100%;
+				height: 6.625rem;
+				background:url(img/top-bg.png);
+				/*background: #ff5000;*/
+				background-size: cover;		
+			}
+			.topa{
+				width: 100%;
+				height: 1.5rem;
+				padding-top: 0.5rem;
+				font-size: 0.65rem;
+				color: #fff;
+				line-height: 1rem;
+				position: fixed;
+				top: 0;
+				background: transparent;
+				vertical-align: middle;
+			}
+			.topa a{
+				color: #ffffff;
+				text-decoration: none;
+				
+			}
+			.topa img{
+				width: 1.2rem;
+				height: 1.05rem;
+			}
+			.headimg{
+				display: block;
+				overflow: hidden;
+			}
+			.headimg .Imga{
+				width: 2.15rem;
+				height: 2.15rem;
+				margin: 0 auto;
+				display: block;
+				padding-top: 2rem;
+			}
+			.Imgb{				
+				width: 4.1rem;
+				height: 0.75rem;
+				margin: 0 auto;
+				display: block;
+				margin-top: 0.4rem;
+			}
+			#top p{
+				font-size: 0.675rem;
+				color: #fff;
+				text-align: center;
+				height: 0.68rem;
+				line-height: 0.6rem;
+				margin-top: 0.5rem;
+			}
+			
+			#nav{
+				height: 3.55rem;
+				width:100%;
+				background:#fff;
+				display: -webkit-box;
+				-webkit-box-orient:horizontal;
+				border-bottom: 0.05rem solid #dcdcdc;
+			}
+			#nav span{
+				display: block;
+				height: 3.55rem;
+				-webkit-box-flex:1;
+				text-align: center;
+				color:#e4300b;
+				font-size: 0.5rem;
+			}
+			#nav span img{
+				width:1.25rem;
+				height:1.25rem;
+				display: block;
+				margin:0.65rem auto 0.5rem;
+			}
+			
+			#wddd{
+				height: 4.875rem;
+				width:100%;
+				background:#fff;
+				margin-top: 0.4rem;
+				border-bottom: 0.05rem solid #dcdcdc;
+			}
+			.wd{
+				height: 1.925rem;
+				line-height: 1.925rem;
+				color: #0e2020;
+				font-size: 0.675rem;	
+				font-family: "黑体";			
+				border-bottom: 0.025rem solid #dcdcdc;
+			}
+			.wd a:nth-child(2){
+				color: #9a9a9a;
+				font-size: 0.5rem;
+				float: right;
+				margin-right: 0.625rem;
+				text-decoration: none;
+			}
+			.wd a:nth-child(2) img{
+				width: 0.325rem;
+				height: 0.55rem;
+				margin-left: 0.45rem;
+			}
+			.dd{
+				height:2.875rem;
+				width:100%;
+				display: -webkit-box;
+				-webkit-box-orient:horizontal;
+			}
+			.dd span{
+				display: block;
+				height: 2.875rem;
+				-webkit-box-flex:1;
+				text-align: center;
+				color:#000104;
+				font-size: 0.5rem;
+			}
+			.dd span img{
+				width:0.95rem;
+				height:0.95rem;
+				display: block;
+				margin:0.4rem auto 0.55em;
+			}
+			
+			#bbgj{
+				height: 15.25rem;
+				width:100%;
+				background:#fff;
+				margin-top: 0.4rem;
+				border-bottom: 0.05rem solid #dcdcdc;
+			}
+			.gj{
+				height:4.4rem;
+				width:100%;
+				display: -webkit-box;
+				-webkit-box-orient:horizontal;
+				border-bottom: 0.025rem solid #dcdcdc;
+			}
+			.gj span{
+				display: block;
+				height: 4.4rem;
+				-webkit-box-flex:1;
+				text-align: center;
+				color:#000104;
+				font-size: 0.6rem;				
+				border-right: 0.025rem solid #dcdcdc;
+			}
+			.gj span img{
+				width:1.325rem;
+				height:1.325rem;
+				display: block;
+				margin:0.95rem auto 0.35rem;
+			}
+			
+			#wdhd{
+				height: 6.425rem;
+				width:100%;
+				background:#fff;
+				margin-top: 0.4rem;
+				border-bottom: 0.05rem solid #dcdcdc;
+				margin-bottom: 4.125rem;
+			}
+			
+			#foot{
+				width:100%;
+				height:2rem;
+				display:flex;
+				position:fixed;
+				bottom:0;		
+				border-top: 0.025rem solid #dcdcdc;
+				background:#fff;
+			}
+    		#foot a{
+    			display: block;
+    			flex:1;
+    			color:#656567;
+    			text-decoration: none;
+    		}
+    		#foot a span{
+    			display:block;
+    			width:100%;
+    			font-size:0.75rem;
+    			margin-top: 0.4rem;
+    			text-align: center;
+    		}
+    		#foot a p{
+    			display:block;
+    			width:100%;
+    			margin-top: 0.2rem;
+    			font-size:0.325rem;
+    			text-align: center;
+    		}
+    		#foot .active{
+    			color:#f84409;
+    		} 		
+		</style>
+	</head>
+	<body>
+		<div id="top">
+			<div class="topa" id="topa">
+				<a href="setup.html" style="padding-left:0.5rem ;">设置</a>
+				<img src="img/top-right.png" style="float: right;margin-right: 0.4rem;" />
+				<img src="img/top-left.png" style="float: right;margin-right: 1.425rem;" />
+			</div>
+			<a href="personalData.html" class="headimg">
+				<img src="img/touxiang.png" class="Imga" />
+			</a>
+			<p>Mr.范.</p>
+			<img src="img/tqz.png" class="Imgb" />
+		</div>
+		<div id="nav">
+			<span><img src='img/wd1212.png'>我的1212</span>
+			<span><img src="img/qtz.png">抢三折童装</span>
+			<span><img src="img/bgwy.png">办公文艺范</span>
+			<span><img src="img/nzq.png">男装50元劵</span>
+		</div>
+		<div id="wddd">
+			<div class="wd">
+				<span style="padding-left:0.55rem;">我的订单</span>
+				<a href="indent.html">查看更多订单<img src="img/qbdd.png"></a>
+			</div>
+			<div class="dd">
+				<span><img src='img/dfk.png'>待付款</span>
+				<span><img src='img/dfh.png'>待发货</span>
+				<span><img src='img/dsh.png'>待收货</span>
+				<span><img src="img/dpj.png">待评价</span>
+				<span><img src="img/sh.png">退款/售后</span>				
+			</div>
+		</div>
+		<div id="bbgj">
+			<div class="wd">
+				<span style="padding-left:0.55rem;">必备工具</span>
+				<span>查看更多工具<img src="img/qbdd.png"></span>
+			</div>
+			<div class="gj">
+				<span><img src='img/scbb.png'>收藏宝贝</span>
+				<span><img src='img/scnr.png'>收藏内容</span>
+				<span><img src='img/gz.png'>　关注　</span>
+				<span style="border-right: none;"><img src="img/zj.png">　足迹　</span>			
+			</div>
+			<div class="gj">
+				<span><img src='img/kjb.png'>　卡券包</span>
+				<span><img src='img/myhb.png'>蚂蚁花呗</span>
+				<span><img src='img/hyzx.png'>会员中心</span>
+				<span style="border-right: none;"><img src="img/wdxm.png">我的小蜜</span>			
+			</div>
+			<div class="gj">
+				<span><img src='img/wyhq.png'>我要换钱</span>
+				<span><img src='img/wdtx.png'>我的通信</span>
+				<span><img src='img/wdkd.png'>我的快递</span>
+				<span style="border-right: none;"><img src="img/wssj.png">我是商家</span>			
+			</div>
+		</div>
+		<div id="wdhd">
+			<div class="wd">
+				<span style="padding-left:0.55rem;">我的互动</span>
+			</div>
+			<div class="gj">
+				<span><img src='img/wdqz.png'>我的圈子</span>
+				<span><img src='img/wdfx.png'>我的分享</span>
+				<span><img src='img/wdja.png'> 问大家 </span>
+				<span style="border-right: none;"><img src="img/wdpl.png">我的评论</span>			
+			</div>
+		</div>
+		<div id="foot">
+			<a href="homepage.html">
+				<span class="icon-fangzi"></span><p class="">首页</p>
+			</a>
+			<a>
+				<span class="icon-feed"></span><p>微淘</p>
+			</a>
+			<a>
+				<span class="icon-question"></span><p>问大家</p>
+			</a>
+			<a href="myCar.html">
+				<span class="icon-cart"></span><p>购物车</p>
+			</a>
+			<a href="myTaobao.html" class="active">
+				<span class="icon-user"></span>	<p>我的淘宝</p>
+			</a>
+		</div>
+		
+		<script>
+			var oDiv = document.getElementById('topa');
+			var topy = oDiv.offsetTop;
+			window.onscroll = function(){
+				var scrollTop = document.body.scrollTop || document.documentElement.scrollTop;
+				
+				if(top>= scrollTop){
+					oDiv.style.background='transparent';
+				}else if(top= scrollTop){
+					oDiv.style.background='#ff5000'				
+				}else{				
+					oDiv.style.background='transparent';
+				}				
+			};
+
+			
+			document.documentElement.style.fontSize = innerWidth/16 + 'px';
+		    onresize = function(){
+				document.documentElement.style.fontSize = innerWidth/16 + 'px';
+	   		 };
+		</script>
+	</body>
+</html>
